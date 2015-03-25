@@ -14,5 +14,6 @@ ocaml-dev
 ohmyzsh
 opam
 python-dev
+tmux
 vim
 zsh
