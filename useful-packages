@@ -1,0 +1,18 @@
+# Just a list of packages for reference, at some point I should
+# make this a script so I can get a dev env. running faster
+
+
+ffmpeg
+git
+graphviz
+gvim
+imagemagick
+latex
+nodejs
+npm
+ocaml-dev
+ohmyzsh
+opam
+python-dev
+vim
+zsh
