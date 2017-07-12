@@ -4,24 +4,20 @@ filetype off                  " required
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Sass'
-Plug 'Solarized'
-Plug 'The-NERD-tree'
 Plug 'Valloric/ListToggle'
-Plug 'Valloric/YouCompleteMe'
-Plug 'ag.vim'
-Plug 'commentary.vim'
-Plug 'ctrlp.vim'
+Plug 'Shougo/neocomplete.vim'
+Plug 'tpope/vim-commentary'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
-Plug 'fugitive.vim'
+Plug 'tpope/vim-fugitive'
 Plug 'gmarik/Vundle.vim'
-Plug 'matchit.zip'
-Plug 'scrooloose/syntastic'
-Plug 'sexy-railscasts'
-Plug 'surround.vim'
-Plug 'unimpaired.vim'
-Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'isRuslan/vim-es6'
+Plug 'joukevandermaas/vim-ember-hbs'
+Plug 'rking/ag.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
 
 " All of your Plugins must be added before the following line
 call plug#end()
@@ -35,7 +31,6 @@ set autochdir
 let NERDTreeChDirMode=2
 let NERDTreeIgnore = ['\.pyc$']
 nnoremap <C-n> :NERDTreeToggle .<CR>
-
 
 " Configure status line
 set statusline=%F       "filepath
@@ -58,8 +53,6 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:ag_working_path_mode="r"
 
 " I'm an old man, make that font bigger
-set guifont=Menlo:h13
-
 " Setup indentation
 set smartindent
 set tabstop=4
@@ -81,13 +74,11 @@ function FuckOff()
 	:only
 	:tabo
 endfunction
-command FuckOff execute "call FuckOff()"
 
 " for some reason commentary decided it doesn't understand python?
 autocmd FileType python setlocal commentstring=#\ %s
 autocmd FileType sh setlocal commentstring=#\ %s
 autocmd FileType htmldjango setlocal commentstring={#%s\ #}
-
 
 " use project root
 let g:ag_working_path_mode="r"
@@ -97,19 +88,11 @@ let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 
 " ag is fast enough that CtrlP doesn't need to cache
 let g:ctrlp_use_caching = 0
-
 let g:ctrlp_working_path_mode = 'ra'
 
-
-" Clever Hack so that lnext/lprev work with only 1 item
-function! <SID>LocationPrevious()                       
-  try                                                   
-    lprev                                               
-  catch /^Vim\%((\a\+)\)\=:E553/                        
-    llast                                               
-  endtry                                                
-endfunction                                             
-
+" disable annoying search things
+set nohlsearch
+set noincsearch
 function! <SID>LocationNext()                           
   try                                                   
     lnext                                               
