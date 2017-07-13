@@ -91,4 +91,5 @@ source $ZSH/oh-my-zsh.sh
 # git config --global push.default current
 alias p="git push -u"
 alias gca="git commit --amend"
+alias github="open -a '/Applications/Google Chrome.app' $(git config --get remote.origin.url | sed 's/.git$//g')"
 cd ~/hacking
