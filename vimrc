@@ -4,18 +4,19 @@ filetype off                  " required
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'Valloric/ListToggle'
 Plug 'Shougo/neocomplete.vim'
-Plug 'tpope/vim-commentary'
+Plug 'Valloric/ListToggle'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'flazz/vim-colorschemes'
-Plug 'tpope/vim-fugitive'
 Plug 'gmarik/Vundle.vim'
 Plug 'isRuslan/vim-es6'
 Plug 'joukevandermaas/vim-ember-hbs'
 Plug 'rking/ag.vim'
+Plug 'rust-lang/rust.vim'
 Plug 'scrooloose/nerdtree'
 Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 

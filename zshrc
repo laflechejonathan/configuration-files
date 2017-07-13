@@ -86,4 +86,9 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 #
+
+# assuming:
+# git config --global push.default current
+alias p="git push -u"
 alias gca="git commit --amend"
+cd ~/hacking
